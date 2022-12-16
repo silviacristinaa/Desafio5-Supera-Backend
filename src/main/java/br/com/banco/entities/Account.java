@@ -20,5 +20,5 @@ public class Account {
 	@Column(name = "id_conta")
 	private Long id; 
 	@Column(name = "nome_responsavel", nullable = false, length = 50)
-	private String ResponsibleName; 
+	private String responsibleName; 
 }
