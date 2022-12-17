@@ -1,5 +1,6 @@
 package br.com.banco.repositories;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.springframework.data.domain.Page;
@@ -23,4 +24,7 @@ public interface TransferRepository extends JpaRepository<Transfer, Long>{
 			@Param("finalDate") LocalDateTime finalDate, 
 			@Param("transactionOperatorName") String transactionOperatorName,
 			Pageable pageable);
+	
+	@Query("SELECT COALESCE(sum(t.value), 0) FROM Transfer t JOIN t.account a WHERE a.id = :accountId")
+	BigDecimal sumValueByAccountId(@Param("accountId") Long accountId);
 }
