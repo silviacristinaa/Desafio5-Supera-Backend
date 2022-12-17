@@ -26,6 +26,9 @@ public class TransferServiceImpl implements TransferService {
 	public Page<TransferResponseDto> findByFilters(Long accountNumber, LocalDateTime initialDate,
 			LocalDateTime finalDate, String transactionOperatorName, Pageable pageable) {
 		
+		transactionOperatorName = transactionOperatorName != null && transactionOperatorName.isEmpty() ? 
+				null : transactionOperatorName;
+		
 		List<TransferResponseDto> response = transferRepository
 				.findByAccountIdAndTransferDateBetweenAndTransactionOperatorName(accountNumber, initialDate, finalDate,
 						transactionOperatorName, pageable)
