@@ -15,9 +15,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import br.com.banco.enums.TypeEnum;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter @Setter
 @Entity
 @Table(name = "transferencia")
