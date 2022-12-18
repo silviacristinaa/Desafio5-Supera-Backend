@@ -38,7 +38,7 @@ public class TransferServiceImpl implements TransferService {
 		
 		List<TransferResponseDataDto> response = transferRepository
 				.findByAccountIdAndTransferDateBetweenAndTransactionOperatorName(accountNumber, initialDate, finalDate,
-						transactionOperatorName, pageable)
+						transactionOperatorName)
 				.stream().map(transfer -> modelMapper.map(transfer, TransferResponseDataDto.class))
 				.collect(Collectors.toList());
 		
@@ -49,7 +49,10 @@ public class TransferServiceImpl implements TransferService {
 		
 		setTotalBalance(accountNumber, initialDate, finalDate, transactionOperatorName, builder, balanceInPeriod);
 		
-		Page<TransferResponseDataDto> page = new PageImpl<TransferResponseDataDto>(response);
+		final int start = (int)pageable.getOffset();
+		final int end = Math.min((start + pageable.getPageSize()), response.size());
+		
+		Page<TransferResponseDataDto> page = new PageImpl<>(response.subList(start, end), pageable, response.size());
 		return builder.transferResponseDataDto(page).build();
 	}
 

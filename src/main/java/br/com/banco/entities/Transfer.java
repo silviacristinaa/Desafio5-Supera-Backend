@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import br.com.banco.enums.TypeEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,7 +31,8 @@ public class Transfer {
 	@Column(name = "valor", nullable = false)
 	private BigDecimal value;
 	@Column(name = "tipo", nullable = false, length = 15)
-	private String type;
+	@Enumerated(EnumType.STRING)
+	private TypeEnum type;
 	@Column(name = "nome_operador_transacao", length = 50)
 	private String transactionOperatorName;
 	@ManyToOne
