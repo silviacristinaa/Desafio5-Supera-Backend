@@ -1,5 +1,50 @@
 # Processo Seletivo Java
 
+<h3>Sobre:</h3>
+
+Projeto realizado para o processo seletivo Java da Supera, primeiramente será apresentada as informações necessárias para executá-lo e em seguida as informações da empresa explicando sobre o desafio. 
+
+<h3>Pré-requisitos com Docker:</h3>
+
+- Docker instalado
+
+<h3>Como executar:</h3>
+
+- execute o comando:
+docker run -p 8080:8080 --name backend silviacristinaa:desafio5-supera-backend:latest
+
+<h3>Pré-requisitos sem Docker:</h3>
+
+- Java 11
+
+<h3>Para clonar o repositório:</h3> 
+
+- git clone https://github.com/silviacristinaa/Desafio5-Supera-Backend.git
+
+<h3>Como executar:</h3>
+
+- Será executado na porta 8080
+
+- Dentro da pasta do projeto, execute o comando: 
+./mvnw spring-boot:run
+
+<h3>Tecnologias Utilizadas:</h3>
+
+ - Java 11, Spring Boot, Maven, Lombok, Banco de Dados H2, Docker, Testes Unitários e de Integração
+
+<h3>Autor:</h3>
+
+<a href="https://www.linkedin.com/in/silvia-cristina-alexandre">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/114493777?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Silvia Cristina Alexandre</b></sub></a>
+
+[![Linkedin Badge](https://img.shields.io/badge/-Silvia-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/silvia-cristina-alexandre)](https://www.linkedin.com/in/silvia-cristina-alexandre)
+[![Gmail Badge](https://img.shields.io/badge/-silviacristinaalexandre1@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:silviacristinaalexandre1@gmail.com)](mailto:silviacristinaalexandre1@gmail.com)
+<hr>
+
+
+
 ## Descrição 
 
 - Este teste consiste em construir uma camada de serviço, para uma operação muito realizada em bancos, para emissão de extrato bancário.
