@@ -11,7 +11,7 @@ Projeto realizado para o processo seletivo Java da Supera, primeiramente será a
 <h3>Como executar:</h3>
 
 - execute o comando:
-docker run -p 8080:8080 --name backend silviacristinaa:desafio5-supera-backend:latest
+docker run -p 8080:8080 --name backend silviacristinaa/desafio5-supera-backend:latest
 
 <h3>Pré-requisitos sem Docker:</h3>
 
